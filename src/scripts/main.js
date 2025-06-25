@@ -5,6 +5,10 @@ const table = document.querySelector('table');
 
 function cloneColumn(rows) {
   for (const row of rows) {
+    if (row.cells.length < 2) {
+      continue;
+    }
+
     const cellToClone = row.cells[1];
     const clone = cellToClone.cloneNode(true);
 
